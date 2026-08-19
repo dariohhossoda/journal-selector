@@ -1,0 +1,17 @@
+{
+  "name": "journal-selector",
+  "owner": {
+    "name": "Dario Hachisu Hossoda",
+    "url": "https://github.com/dariohhossoda"
+  },
+  "description": "Journal Selector — turn 'where do I submit this paper?' into a reproducible, weighted decision matrix with cited evidence.",
+  "plugins": [
+    {
+      "name": "journal-selector",
+      "source": "./",
+      "description": "One skill + one slash command. Elicits your criteria and weights, researches candidate venues, scores them deterministically via a bundled Python scorer, and writes a reviewable decision-matrix document.",
+      "version": "0.1.0",
+      "license": "MIT"
+    }
+  ]
+}

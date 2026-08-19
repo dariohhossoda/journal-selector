@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+candidates.json
+journal_candidates.md

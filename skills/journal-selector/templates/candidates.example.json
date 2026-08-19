@@ -1,0 +1,121 @@
+{
+  "title": "Journal candidates — decision matrix",
+  "date": "2026-07-22",
+  "topic": "Urban flood nowcasting from weather-radar rainfall (dual-pol S-band) versus rain-gauge rainfall, feeding a machine-learning model for a flood early warning system; case study in the Mooca/Tamanduatei sub-basin (Sao Paulo, Brazil).",
+  "criteria": [
+    {
+      "id": "impact",
+      "label": "Impact Factor",
+      "weight": 50,
+      "type": "numeric",
+      "direction": "higher_better",
+      "measures": "Most recent JCR impact factor available, normalized against the highest IF in this candidate set."
+    },
+    {
+      "id": "cost",
+      "label": "Publishing cost / agreements",
+      "weight": 30,
+      "type": "scale",
+      "measures": "0-10, set by the author: 10 = APC fully covered by an agreement the author's institution actually holds; 4 = no agreement found (author pays or publishes closed); 1 = publisher the author has decided to avoid."
+    },
+    {
+      "id": "special_issue",
+      "label": "Special issue fit",
+      "weight": 20,
+      "type": "scale",
+      "measures": "0-10: 0 = no open special issue on topic; ~6 = broad-scope issue that would accept the paper; 8-9 = issue whose call names this paper's exact subject."
+    }
+  ],
+  "candidates": [
+    {
+      "journal": "Journal of Hydrology",
+      "publisher": "Elsevier",
+      "scores": {
+        "impact": {"value": 7.3, "note": "JCR 2025."},
+        "cost": {"value": 10, "note": "Covered by the CAPES-Elsevier Read & Publish agreement for acceptances 2026-2028 — verified for this author's institution."},
+        "special_issue": {"value": 8, "note": "'Real-time Flood Forecasting and Early Warning Systems in Urban Areas' (special-issue/10X1TVPTT8B). Names FEWS + real-time forecasting + urban area. Deadline NOT confirmed: ScienceDirect returns HTTP 403 to automated fetch — open the page by hand before submitting."}
+      }
+    },
+    {
+      "journal": "Journal of Hydrology: Regional Studies",
+      "publisher": "Elsevier",
+      "scores": {
+        "impact": {"value": 5.63, "note": "JCR 2024 — JCR 2025 value not published for this title at research time."},
+        "cost": {"value": 10, "note": "Same CAPES-Elsevier agreement."},
+        "special_issue": {"value": 0, "note": "No open special issue found; regular-flow submission."}
+      }
+    },
+    {
+      "journal": "Journal of Flood Risk Management",
+      "publisher": "Wiley",
+      "scores": {
+        "impact": {"value": 3.7, "note": "JCR 2025."},
+        "cost": {"value": 10, "note": "Covered by the CAPES-Wiley agreement for acceptances from 2026-01-28."},
+        "special_issue": {"value": 6, "note": "si-2025-000700, broad flood-risk scope tied to the EGU NH1.3 session; deadline not shown on the call page."}
+      }
+    },
+    {
+      "journal": "International Journal of Disaster Risk Reduction",
+      "publisher": "Elsevier",
+      "scores": {
+        "impact": {"value": 5.35, "note": "JCR 2024."},
+        "cost": {"value": 10, "note": "Same CAPES-Elsevier agreement."},
+        "special_issue": {"value": 0, "note": "None identified."}
+      }
+    },
+    {
+      "journal": "Natural Hazards and Earth System Sciences",
+      "publisher": "Copernicus",
+      "scores": {
+        "impact": {"value": 4.68, "note": "JCR 2024."},
+        "cost": {"value": 5, "note": "No institutional agreement found. Copernicus runs its own author-support programme, but eligibility is not guaranteed — scored between 'covered' and 'not covered'."},
+        "special_issue": {"value": 8, "note": "'Early Warning Systems from Research to Operations', submission window 2026-03-10 to 2027-12-31."}
+      }
+    },
+    {
+      "journal": "Remote Sensing",
+      "publisher": "MDPI",
+      "scores": {
+        "impact": {"value": 4.3, "note": "JCR 2025."},
+        "cost": {"value": 1, "note": "Author decided to avoid this publisher — applied as a low score rather than a veto, so the cost is visible in the matrix instead of hidden."},
+        "special_issue": {"value": 9, "note": "'Advanced Applications of Radar Remote Sensing and Artificial Intelligence in Meteorology and Hydrology' — names dual-pol radar + AI directly. Deadline 2026-12-31 (to confirm)."}
+      }
+    },
+    {
+      "journal": "Hydrology",
+      "publisher": "MDPI",
+      "scores": {
+        "impact": {"value": 3.2, "note": "JCR 2025."},
+        "cost": {"value": 1, "note": "Same publisher decision as above."},
+        "special_issue": {"value": 9, "note": "'Advancing Flood Detection, Monitoring & Simulation: Integrating Machine Learning, Remote Sensing & Hydrodynamic Model'. Deadline seen as 2026-03-31; a later extension could not be confirmed — recheck."}
+      }
+    },
+    {
+      "journal": "Water",
+      "publisher": "MDPI",
+      "scores": {
+        "impact": {"value": 3.0, "note": "JCR 2025."},
+        "cost": {"value": 1, "note": "Same publisher decision as above."},
+        "special_issue": {"value": 6, "note": "'Flood Forecasting Using Machine Learning Methods'. Deadline not confirmed."}
+      }
+    },
+    {
+      "journal": "Journal of Hydroinformatics",
+      "publisher": "IWA Publishing",
+      "scores": {
+        "impact": {"value": 2.9, "note": "JCR 2024."},
+        "cost": {"value": 4, "note": "No institutional agreement found."},
+        "special_issue": {"value": 0, "note": "None identified."}
+      }
+    },
+    {
+      "journal": "Urban Water Journal",
+      "publisher": "Taylor & Francis",
+      "scores": {
+        "impact": {"value": 1.6, "note": "JCR 2025."},
+        "cost": {"value": 4, "note": "No institutional agreement found."},
+        "special_issue": {"value": 0, "note": "None identified."}
+      }
+    }
+  ]
+}
