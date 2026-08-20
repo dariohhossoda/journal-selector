@@ -94,6 +94,7 @@ plainly when no close precedent exists, since that cuts both ways.
 
 ```
 .claude-plugin/           plugin.json, marketplace.json
+.github/                  issue forms and PR checklist
 commands/
   journal-select.md       /journal-select
 skills/journal-selector/

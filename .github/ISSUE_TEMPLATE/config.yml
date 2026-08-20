@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: How do I choose criteria / weights for my paper?
+    url: https://github.com/dariohhossoda/journal-selector/blob/main/skills/journal-selector/references/criteria-catalog.md
+    about: Using the plugin is not a bug. The criteria catalog and the scoring model reference answer most usage questions before you open an issue.
+  - name: Claude Code plugin documentation
+    url: https://code.claude.com/docs/en/plugin-marketplaces
+    about: Problems installing or updating any plugin, marketplace auth, private repositories — upstream docs, not this repo.

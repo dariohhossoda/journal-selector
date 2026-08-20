@@ -1,0 +1,77 @@
+name: Bug
+description: Something in the plugin behaves wrong — the scorer, the skill process, the command, or the docs
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - scripts/score_matrix.py — scorer or renderer
+        - SKILL.md — the skill skipped, reordered, or misapplied a step
+        - commands/journal-select.md — the slash command
+        - references/ — a reference file is wrong or contradicts the skill
+        - templates/ — the example JSON or the Markdown skeleton
+        - Install / marketplace
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should have happened
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Paste the error, the wrong table, or the transcript excerpt. Exact output, not a paraphrase.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: >
+        For the scorer, the input JSON that triggers it — minimized to the smallest case that still
+        fails. For the skill, the prompt you gave and the point where it went off.
+      placeholder: |
+        1. Save this as candidates.json: { ... }
+        2. python3 skills/journal-selector/scripts/score_matrix.py candidates.json
+        3. The Impact Factor column is all 0.00
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical — produces a wrong ranking that looks correct
+        - High — crashes, or refuses valid input
+        - Medium — output is right but misleading or hard to read
+        - Low — cosmetic, wording, typo
+      description: >
+        A silently wrong number outranks a crash. A crash is visible; a plausible total that is
+        wrong gets pasted into a submission decision.
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: "0.1.0 (see .claude-plugin/plugin.json), or a commit SHA"
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: Python and OS
+      description: Only for scorer bugs — the script targets stdlib Python 3.9+.
+      placeholder: "Python 3.11.4, Fedora 44"

@@ -1,0 +1,71 @@
+name: Source drift
+description: A source in the research protocol moved, expired, or started blocking automated fetching
+title: "[SOURCE] "
+labels: ["research-protocol", "maintenance"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        This is the issue type that will age the fastest. Publisher URLs move, metric editions
+        ship yearly, consortium agreements are renegotiated, and bot protection appears on pages
+        that used to fetch fine. Report drift here so the protocol does not quietly go stale.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What changed
+      options:
+        - A page now blocks automated fetching (403, bot wall, login required)
+        - A page that was blocked now fetches fine
+        - A URL moved or died
+        - A metric edition shipped, or a source changed its scale or naming
+        - A better primary source exists for a fact already in the protocol
+        - A fact in the protocol is wrong or was never right
+    validations:
+      required: true
+
+  - type: input
+    id: fact
+    attributes:
+      label: Which fact
+      description: The row of the "Where each fact lives" table this affects.
+      placeholder: "Ex: Special issues, Institutional agreement, Impact factor"
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: URL
+      placeholder: "https://www.sciencedirect.com/journal/.../about/call-for-papers"
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: What you observed
+      description: >
+        The status code or the wall you hit, the date you checked, and the tool. A publisher that
+        blocks one client and not another is worth distinguishing.
+      placeholder: |
+        Checked 2026-08-20 via WebFetch: HTTP 403.
+        Same URL in a browser: loads normally.
+    validations:
+      required: true
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Workaround that did work
+      description: >
+        What you used instead — a search snippet, a different page, an API, the author's library.
+        If nothing worked, say so: the honest answer is that the cell becomes a manual check.
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date checked
+      placeholder: "2026-08-20"
+    validations:
+      required: true

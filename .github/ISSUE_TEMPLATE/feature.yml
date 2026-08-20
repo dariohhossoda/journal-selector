@@ -1,0 +1,56 @@
+name: Feature
+description: Propose a change to the process, the scorer, or the output document
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - The seven-step process in SKILL.md
+        - Scorer — new normalization, new field, new output format
+        - Output document — a section that is missing or useless
+        - Templates
+        - Repo plumbing — CI, evals, packaging
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: >
+        What went wrong in a real journal-selection run. Describe the run, not the feature.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried first
+      description: >
+        Most of what this plugin could do is already expressible as a criterion with the right
+        anchors, or as a different weighting. Say why that was not enough.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: invariants
+    attributes:
+      label: Compatible with the repo's invariants
+      description: >
+        These are deliberate, not oversights. A proposal that breaks one needs to argue the case in
+        the proposal field above rather than tick the box.
+      options:
+        - label: No institution, consortium, or publisher preference gets hardcoded — the skill asks each run
+        - label: No new runtime dependency — the scorer stays stdlib Python 3.9+
+        - label: Unverifiable stays `null` with a note; nothing gets filled from the model's memory
+        - label: The arithmetic stays in the script, so a reader can rerun it and get the same numbers

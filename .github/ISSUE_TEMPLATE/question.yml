@@ -1,0 +1,23 @@
+name: Question or discussion
+description: Anything that is not a bug, a criterion, source drift, or a feature
+title: "[Q] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Check `references/scoring-model.md` and `references/criteria-catalog.md` first — they cover
+        weighting, veto vs. penalty, unknown values, and sensitivity checks.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: The manuscript and the field, roughly. Journal selection advice does not generalize across fields.

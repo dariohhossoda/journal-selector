@@ -1,0 +1,92 @@
+name: Criterion — add or correct
+description: Propose a new criterion for the catalog, or fix how an existing one is scored
+title: "[CRITERION] "
+labels: ["criteria-catalog"]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        The catalog is a menu, not a checklist — a criterion earns its place by being something an
+        author would actually weigh, with a source you can point at.
+
+  - type: input
+    id: name
+    attributes:
+      label: Criterion
+      placeholder: "Ex: Time to first decision, Data-availability policy, Preprint policy"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: New or correction
+      options:
+        - New criterion
+        - Correction to an existing criterion
+    validations:
+      required: true
+
+  - type: textarea
+    id: decides
+    attributes:
+      label: What submission decision does it change
+      description: >
+        A criterion is only worth a column if some author would pick a different journal because of
+        it. Name that situation.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Scoring type
+      options:
+        - scale — 0-10 assigned by the author
+        - numeric, higher_better
+        - numeric, lower_better
+        - veto — a disqualification, not a score
+    validations:
+      required: true
+
+  - type: textarea
+    id: anchors
+    attributes:
+      label: Anchors
+      description: >
+        For `scale`, what a 0, a middle value, and a 10 mean concretely. For `numeric`, the unit and
+        what the reference should be. For a veto, what exactly disqualifies.
+      placeholder: |
+        10 = policy published and enforced
+        5  = policy published, enforcement unclear
+        0  = no policy
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Where the value comes from
+      description: >
+        A primary source, and whether it can be fetched automatically. "Ask the author" is a valid
+        answer for anything institution-specific — say so explicitly.
+    validations:
+      required: true
+
+  - type: textarea
+    id: failure
+    attributes:
+      label: How it goes wrong
+      description: >
+        Every catalog entry carries a failure mode. What does this criterion mismeasure, reward
+        perversely, or not compare across fields?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: constraints
+    attributes:
+      label: Confirm
+      options:
+        - label: This does not hardcode any institution, country, consortium, or publisher preference
+          required: true
