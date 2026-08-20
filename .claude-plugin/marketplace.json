@@ -9,8 +9,8 @@
     {
       "name": "journal-selector",
       "source": "./",
-      "description": "One skill + one slash command. Elicits your criteria and weights, researches candidate venues, scores them deterministically via a bundled Python scorer, and writes a reviewable decision-matrix document.",
-      "version": "0.1.0",
+      "description": "One skill, one command, one cheap retrieval subagent. Elicits your criteria and weights, fans out per-candidate fact-finding, scores the candidates deterministically via a bundled Python scorer, and writes a reviewable decision-matrix document.",
+      "version": "0.2.0",
       "license": "MIT"
     }
   ]

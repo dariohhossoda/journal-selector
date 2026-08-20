@@ -86,6 +86,16 @@ with the specific question to answer. A number that is plausible is worse than a
 **Include candidates you expect to lose.** A matrix where every option is viable cannot show why the
 winner won.
 
+**Lookups are delegated; judgement is not.** Fetching the published facts for ten journals is
+mechanical and voluminous, so it runs on a cheap subagent (`agents/venue-fact-finder.md`, one per
+candidate, `WebSearch` and `WebFetch` only). That keeps forty publisher pages out of the main
+context. But the agent's output has no score field, deliberately: turning "APC is 3,600 USD" into a
+0–10 value needs the anchors agreed with the author, and a weak model asked for a number is exactly
+the thing that invents one. It reports a `fetch_status` per fact, and anything short of `fetched`
+travels into the cell note as a caveat. The facts behind the Top 3 get re-verified by hand before
+anything is recommended — an error in row nine is noise, the same error in row one sends the
+manuscript to the wrong journal.
+
 **A high score is not evidence of fit.** Aims-and-scope statements are marketing. The skill verifies
 the winner against 3–5 papers it published in the last few years on the same problem — and reports it
 plainly when no close precedent exists, since that cuts both ways.
@@ -95,6 +105,8 @@ plainly when no close precedent exists, since that cuts both ways.
 ```
 .claude-plugin/           plugin.json, marketplace.json
 .github/                  issue forms and PR checklist
+agents/
+  venue-fact-finder.md    cheap retrieval subagent, one per candidate journal
 commands/
   journal-select.md       /journal-select
 skills/journal-selector/

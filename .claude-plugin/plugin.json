@@ -1,6 +1,6 @@
 {
   "name": "journal-selector",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Evidence-based journal selection for a manuscript: elicit criteria, research candidate venues, score them in a transparent weighted decision matrix, and produce an auditable Markdown record of the decision.",
   "author": {
     "name": "Dario Hachisu Hossoda",

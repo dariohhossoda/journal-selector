@@ -54,6 +54,27 @@ manual-checks list with the specific question the author needs to answer, e.g.:
 
 "Verify on the website" is not a checklist item. A URL plus the question is.
 
+## Delegating the lookups
+
+Most of this protocol is mechanical: one journal, a handful of published facts, a URL each. That is
+what `agents/venue-fact-finder.md` is for — dispatch one per candidate, in parallel. It runs on a
+cheap model, has only `WebSearch` and `WebFetch`, and returns structured records rather than prose.
+
+It reports a `fetch_status` per fact, and the status is part of the evidence:
+
+| `fetch_status` | What it means for the cell |
+|---|---|
+| `fetched` | Read from the primary source. Use the value; note the source and date. |
+| `search_only` | Value came from a search snippet; the primary source would not load. Usable, but the note must say the primary source was not reached. |
+| `blocked` | The source refused the request. The cell is `null`, and the URL goes on the manual-checks list with the status code. |
+| `not_found` | Looked, not published. The cell is `null` with that stated — this is a real finding, not a gap. |
+| `not_attempted` | Out of scope for that dispatch. |
+
+The agent does not score, and its output has no score field. Turning a raw fact into a 0–10 value
+needs the anchors and criteria agreed with the author, which the agent never saw. Do that conversion
+yourself, and spot-check the facts behind the Top 3 against the URLs it reported before recommending
+anything.
+
 ## Sequence
 
 1. Ask the author about institutional agreements, budget, publisher vetoes, and OA mandates

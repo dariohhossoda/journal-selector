@@ -11,6 +11,7 @@ body:
         - scripts/score_matrix.py — scorer or renderer
         - SKILL.md — the skill skipped, reordered, or misapplied a step
         - commands/journal-select.md — the slash command
+        - agents/venue-fact-finder.md — the retrieval subagent (invented a fact, wrong schema, ignored a block)
         - references/ — a reference file is wrong or contradicts the skill
         - templates/ — the example JSON or the Markdown skeleton
         - Install / marketplace
